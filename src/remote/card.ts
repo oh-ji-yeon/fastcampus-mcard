@@ -1,14 +1,35 @@
 import { COLLECTIONS } from '@/constants'
 import { Card } from '@/models/card'
-import { collection, getDocs } from 'firebase/firestore'
+
+import {
+  collection,
+  getDocs,
+  limit,
+  query,
+  QuerySnapshot,
+  startAfter,
+} from 'firebase/firestore'
 import { store } from './firebase'
 
-export async function getCards() {
-  const cardSnapshot = await getDocs(collection(store, COLLECTIONS.CARD))
-  //   console.log('cardSnapshot', cardSnapshot)
+export async function getCards(pageParam?: QuerySnapshot<Card>) {
+  // pageParam: 지금 보이고 있는 맨 마지막 요소 - cursor로 활용.
+  const cardQuery =
+    pageParam == null
+      ? query(collection(store, COLLECTIONS.CARD), limit(10))
+      : query(
+          collection(store, COLLECTIONS.CARD),
+          startAfter(pageParam),
+          limit(10),
+        )
 
-  return cardSnapshot.docs.map((doc) => ({
+  const cardSnapshot = await getDocs(cardQuery)
+
+  const lastVisible = cardSnapshot.docs[cardSnapshot.docs.length - 1] // 지금 불러온 snapShot에 맨 마지막 문서 -> 커서로 판단
+
+  const items = cardSnapshot.docs.map((doc) => ({
     id: doc.id,
     ...(doc.data() as Card),
   }))
+
+  return { items, lastVisible }
 }
