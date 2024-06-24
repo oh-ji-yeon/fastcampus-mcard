@@ -9,11 +9,19 @@ interface ListRowProps {
   right?: React.ReactNode
   withArrow?: boolean // 화살표를 그릴지 말지
   onClick?: () => void
+  as?: 'div' | 'li'
 }
 
-function ListRow({ left, contents, right, withArrow, onClick }: ListRowProps) {
+function ListRow({
+  as = 'li',
+  left,
+  contents,
+  right,
+  withArrow,
+  onClick,
+}: ListRowProps) {
   return (
-    <Flex as="li" css={listRowContainerStyles} onClick={onClick} align="center">
+    <Flex as={as} css={listRowContainerStyles} onClick={onClick} align="center">
       <Flex css={listRowLeftStyles}>{left}</Flex>
       <Flex css={listRowContentsStyles}>{contents}</Flex>
       <Flex>{right}</Flex>
