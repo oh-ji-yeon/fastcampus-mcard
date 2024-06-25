@@ -19,5 +19,12 @@
     "types": ["jest", "@testing-library/jest-dom"],
     "jsxImportSource": "@emotion/react"
   },
-  "include": ["src", "tsconfig.paths.json"]
+  "include": [
+    "src",
+    "tsconfig.paths.json",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/**/*.ts",
+    "**/**/*.tsx"
+  ]
 }
