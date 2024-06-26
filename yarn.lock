@@ -3937,6 +3937,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/validator@npm:^13.12.0":
+  version: 13.12.0
+  resolution: "@types/validator@npm:13.12.0"
+  checksum: b3344ef630ff9a3ffab4ce10da268e7be98ca2df9cbd956fb5cac860bd661c7ff6e82e0cdc7b253f037a98cf3b233fff3d04d28330bcd3ca2cafb0c52253976e
+  languageName: node
+  linkType: hard
+
 "@types/ws@npm:^8.5.5":
   version: 8.5.10
   resolution: "@types/ws@npm:8.5.10"
@@ -10146,6 +10153,7 @@ __metadata:
     "@types/react": "npm:^18.0.0"
     "@types/react-dom": "npm:^18.0.0"
     "@types/testing-library__jest-dom": "npm:^6.0.0"
+    "@types/validator": "npm:^13.12.0"
     craco-alias: "npm:^3.0.1"
     eslint: "npm:8.47.0"
     eslint-config-prettier: "npm:^9.1.0"
@@ -10164,6 +10172,7 @@ __metadata:
     react-scripts: "npm:5.0.1"
     swiper: "npm:9"
     typescript: "npm:^4.4.2"
+    validator: "npm:^13.12.0"
     web-vitals: "npm:^2.1.0"
   languageName: unknown
   linkType: soft
@@ -14439,6 +14448,13 @@ __metadata:
     convert-source-map: "npm:^1.6.0"
     source-map: "npm:^0.7.3"
   checksum: db5469f133a7cfb7680a28ddfb31aad2cc64f282fa7cf0c8e91f91bfd542bf61597260282be28c9648f0f2114963a24b273ed92af9a5cad6cb629c708ca72f8e
+  languageName: node
+  linkType: hard
+
+"validator@npm:^13.12.0":
+  version: 13.12.0
+  resolution: "validator@npm:13.12.0"
+  checksum: db6eb0725e2b67d60d30073ae8573982713b5903195d031dc3c7db7e82df8b74e8c13baef8e2106d146d979599fd61a06cde1fec5c148e4abd53d52817ff0fd9
   languageName: node
   linkType: hard
 
