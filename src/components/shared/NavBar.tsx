@@ -15,7 +15,7 @@ function Navbar() {
     <Flex justify="space-between" align="center" css={navbarContainerStyles}>
       <Link to="/">Home</Link>
       {showSignButton ? (
-        <Link to="/signup">
+        <Link to="/signin">
           <Button>SignIn/SignUp</Button>
         </Link>
       ) : null}
