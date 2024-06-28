@@ -9,7 +9,7 @@ import { collection, doc, setDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
 
 function SignupPage() {
-  const handleSubmit = async (formValues: FormValues) => {
+  const HandleSubmit = async (formValues: FormValues) => {
     const navigate = useNavigate()
 
     // console.log('formValues', formValues)
@@ -36,7 +36,7 @@ function SignupPage() {
 
   return (
     <div>
-      <Form onSubmit={handleSubmit} />
+      <Form onSubmit={HandleSubmit} />
     </div>
   )
 }
