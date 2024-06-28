@@ -1,13 +1,17 @@
 import Form from '@/components/signup/Form'
+
 import { COLLECTIONS } from '@/constants'
 import { FormValues } from '@/models/signup'
 import { auth, store } from '@/remote/firebase'
 
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { collection, doc, setDoc } from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom'
 
 function SignupPage() {
   const handleSubmit = async (formValues: FormValues) => {
+    const navigate = useNavigate()
+
     // console.log('formValues', formValues)
     const { email, password, name } = formValues
 
@@ -27,6 +31,7 @@ function SignupPage() {
     await setDoc(doc(collection(store, COLLECTIONS.USER), user.uid), newUser)
 
     // 로그인 처리
+    navigate('/')
   }
 
   return (
