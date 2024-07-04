@@ -3819,7 +3819,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/qs@npm:*":
+"@types/qs@npm:*, @types/qs@npm:^6.9.15":
   version: 6.9.15
   resolution: "@types/qs@npm:6.9.15"
   checksum: 97d8208c2b82013b618e7a9fc14df6bd40a73e1385ac479b6896bafc7949a46201c15f42afd06e86a05e914f146f495f606b6fb65610cc60cf2e0ff743ec38a2
@@ -10157,6 +10157,7 @@ __metadata:
     "@types/jest": "npm:^27.0.1"
     "@types/lodash": "npm:^4.17.5"
     "@types/node": "npm:^16.7.13"
+    "@types/qs": "npm:^6.9.15"
     "@types/react": "npm:^18.0.0"
     "@types/react-dom": "npm:^18.0.0"
     "@types/testing-library__jest-dom": "npm:^6.0.0"
@@ -10171,6 +10172,7 @@ __metadata:
     framer-motion: "npm:^11.2.11"
     lodash: "npm:^4.17.21"
     prettier: "npm:^3.3.2"
+    qs: "npm:^6.12.2"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-infinite-scroll-component: "npm:^6.1.0"
@@ -12154,6 +12156,15 @@ __metadata:
   dependencies:
     side-channel: "npm:^1.0.4"
   checksum: 5a3bfea3e2f359ede1bfa5d2f0dbe54001aa55e40e27dc3e60fab814362d83a9b30758db057c2011b6f53a2d4e4e5150194b5bac45372652aecb3e3c0d4b256e
+  languageName: node
+  linkType: hard
+
+"qs@npm:^6.12.2":
+  version: 6.12.2
+  resolution: "qs@npm:6.12.2"
+  dependencies:
+    side-channel: "npm:^1.0.6"
+  checksum: f44863a6431fb288aa773dbedb5707abd29058e5c3667666f6e7acfd4ce20c18adc8cd3409d79c699d3bf7e39e064bc8702c10ac8b123773d95950cb063ffe63
   languageName: node
   linkType: hard
 
