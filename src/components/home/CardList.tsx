@@ -1,13 +1,13 @@
 import { getCards } from '@/remote/card'
+
 import ListRow from '@shared/ListRow'
-
-import { useInfiniteQuery } from 'react-query'
-import { flatten } from 'lodash'
-import InfiniteScroll from 'react-infinite-scroll-component'
-import { useCallback } from 'react'
-
 import Badge from '@shared/Badge'
 
+import InfiniteScroll from 'react-infinite-scroll-component'
+import flatten from 'lodash.flatten'
+
+import { useInfiniteQuery } from 'react-query'
+import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 function CardList() {
