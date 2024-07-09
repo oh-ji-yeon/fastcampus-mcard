@@ -134,22 +134,7 @@ function IconCheck() {
 
 // html 태그 제거
 function removeHtlmTags(text: string) {
-  // 값 누적
-  let output = ''
-
-  for (let i = 0; i < text.length; i += 1) {
-    if (text[i] === '<') {
-      for (let j = i + 1; j < text.length; j += 1) {
-        if (text[j] === '>') {
-          i = j
-          break
-        }
-      }
-    } else {
-      output += text[i]
-    }
-  }
-  return output
+  return text.replace(/<\/?[^>]+(>|$)/g, '')
 }
 
 const termsContainerStyles = css`
