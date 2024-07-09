@@ -1,0 +1,44 @@
+import Form from '@/components/signup/Form'
+
+import { COLLECTIONS } from '@/constants'
+import { FormValues } from '@/models/signup'
+import { auth, store } from '@/remote/firebase'
+
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { collection, doc, setDoc } from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom'
+
+function SignupPage() {
+  const HandleSubmit = async (formValues: FormValues) => {
+    const navigate = useNavigate()
+
+    // console.log('formValues', formValues)
+    const { email, password, name } = formValues
+
+    const { user } = await createUserWithEmailAndPassword(auth, email, password)
+    // console.log('user', user)
+
+    await updateProfile(user, {
+      displayName: name,
+    })
+
+    const newUser = {
+      uid: user.uid,
+      email: user.email,
+      displayName: name,
+    }
+
+    await setDoc(doc(collection(store, COLLECTIONS.USER), user.uid), newUser)
+
+    // 로그인 처리
+    navigate('/')
+  }
+
+  return (
+    <div>
+      <Form onSubmit={HandleSubmit} />
+    </div>
+  )
+}
+
+export default SignupPage
