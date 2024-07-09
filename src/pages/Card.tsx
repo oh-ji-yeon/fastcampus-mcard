@@ -3,6 +3,9 @@ import Flex from '@/components/shared/Flex'
 import ListRow from '@/components/shared/ListRow'
 import Text from '@/components/shared/Text'
 import Top from '@/components/shared/Top'
+import Review from '@/components/card/Review'
+import Spacing from '@/components/shared/Spacing'
+
 import useUser from '@/hooks/auth/useUser'
 
 import { useAlertContext } from '@/contexts/AlertContext'
@@ -98,8 +101,15 @@ function CardPage() {
         </Flex>
       ) : null}
 
+      <Spacing size={1000} />
+      <Review />
+      <Spacing size={100} />
+
       {/* 신청하기 버튼 */}
-      <FixedBottomButton label="신청하기" onClick={moveToApply} />
+      <FixedBottomButton
+        label="1분만에 신청하고 혜택받기"
+        onClick={moveToApply}
+      />
     </div>
   )
 }
@@ -134,22 +144,7 @@ function IconCheck() {
 
 // html 태그 제거
 function removeHtlmTags(text: string) {
-  // 값 누적
-  let output = ''
-
-  for (let i = 0; i < text.length; i += 1) {
-    if (text[i] === '<') {
-      for (let j = i + 1; j < text.length; j += 1) {
-        if (text[j] === '>') {
-          i = j
-          break
-        }
-      }
-    } else {
-      output += text[i]
-    }
-  }
-  return output
+  return text.replace(/<\/?[^>]+(>|$)/g, '')
 }
 
 const termsContainerStyles = css`

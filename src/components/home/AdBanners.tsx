@@ -14,8 +14,17 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import 'swiper/css'
 
 function AdBanners() {
-  const { data } = useQuery(['adBanners'], () => getAdBanners())
+  const { data, isLoading } = useQuery(['adBanners'], () => getAdBanners())
   // console.log('data', data)
+
+  if (data == null || isLoading) {
+    ;<Container>
+      <Flex direction="column" css={bannerContainerStyles}>
+        <Text bold={true}>&nbsp;</Text>
+        <Text typography="t7">&nbsp;</Text>
+      </Flex>
+    </Container>
+  }
 
   return (
     <Container>
